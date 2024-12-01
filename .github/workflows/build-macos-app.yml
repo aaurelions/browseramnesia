@@ -41,12 +41,18 @@ jobs:
           pyinstaller --onefile --noconsole --windowed --icon=images/logo.icns --add-data "images:images" browser_amnesia_gui.py
           mv dist/browser_amnesia_gui.app "dist/BrowserAmnesia_${{ env.VERSION }}.app"
 
-      # Step 6: Create a Release and Upload .app
+      # Step 6: Compress the .app into a .zip file
+      - name: Compress .app file
+        run: |
+          cd dist
+          zip -r "BrowserAmnesia_${{ env.VERSION }}.zip" "BrowserAmnesia_${{ env.VERSION }}.app"
+
+      # Step 7: Create a Release and Upload .zip
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ env.VERSION }}
           name: "BrowserAmnesia macOS App ${{ env.VERSION }}"
-          artifacts: "dist/BrowserAmnesia_${{ env.VERSION }}.app"
+          artifacts: "dist/BrowserAmnesia_${{ env.VERSION }}.zip"
           generateReleaseNotes: true
