@@ -80,6 +80,7 @@ browser_amnesia uninstall-all
 Run the GUI script and follow the interactive interface to uninstall individual browsers or all browsers at once.
 
 - Supported Browsers
+
   - Google Chrome
   - Brave
   - Opera
@@ -89,6 +90,18 @@ Run the GUI script and follow the interactive interface to uninstall individual 
   - Firefox
   - Tor
   - Puffin
+
+- Remove Quarantine Attribute
+
+<div style="text-align:center" align="center">
+    <img src="https://raw.githubusercontent.com/aaurelions/browseramnesia/master/images/quarantine.png" width="300">
+</div>
+
+macOS assigns a quarantine attribute to unverified apps, which Gatekeeper checks. You can remove this attribute using the xattr command in the terminal:
+
+```bash
+xattr -d com.apple.quarantine ~/Downloads/BrowserAmnesia.app
+```
 
 ## License
 

@@ -39,13 +39,13 @@ jobs:
       - name: Build .app using pyinstaller
         run: |
           pyinstaller --onefile --noconsole --windowed --icon=images/logo.icns --add-data "images:images" browser_amnesia_gui.py
-          mv dist/browser_amnesia_gui.app "dist/BrowserAmnesia_${{ env.VERSION }}.app"
+          mv dist/browser_amnesia_gui.app "dist/BrowserAmnesia.app"
 
       # Step 6: Compress the .app into a .zip file
       - name: Compress .app file
         run: |
           cd dist
-          zip -r "BrowserAmnesia_${{ env.VERSION }}.zip" "BrowserAmnesia_${{ env.VERSION }}.app"
+          zip -r "BrowserAmnesia_${{ env.VERSION }}.zip" "BrowserAmnesia.app"
 
       # Step 7: Create a Release and Upload .zip
       - name: Create GitHub Release
