@@ -16,7 +16,7 @@ Browser Amnesia is a Python tool for macOS to permanently uninstall browsers and
 
 ## Download
 
-- [Download BrowserAmnesia for macOS](https://github.com/aaurelions/browseramnesia/releases/latest/download/BrowserAmnesia.app)
+- [Download BrowserAmnesia for macOS](https://github.com/aaurelions/browseramnesia/releases)
 
 ## Installation
 
