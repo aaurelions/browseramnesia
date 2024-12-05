@@ -100,7 +100,7 @@ Run the GUI script and follow the interactive interface to uninstall individual 
 macOS assigns a quarantine attribute to unverified apps, which Gatekeeper checks. You can remove this attribute using the xattr command in the terminal:
 
 ```bash
-xattr -d com.apple.quarantine ~/Downloads/BrowserAmnesia.app
+sudo xattr -r -c ~/Downloads/BrowserAmnesia.app
 ```
 
 ## License
